@@ -32,13 +32,13 @@
             <form class="d-flex justify-content-end">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item ">
-                        <a class="nav-link active" aria-current="page " href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page " href="dashboard.html">Dashboard</a>
                     </li>
                     <li class="nav-item justify-content-end">
                         <a class="nav-link " href="resources.html">About</a>
                     </li>
                     <li class="nav-item justify-content-end">
-                        <a class="nav-link " href="login.html" tabindex="-1">Login</a>
+                        <a class="nav-link " id="logout" tabindex="-1" onclick="return logout();">Logout</a>
                     </li>
                 </ul>
                 <input class="form-control me-2 " type="search " placeholder="Search " aria-label="Search ">
@@ -46,6 +46,35 @@
             </form>
         </div>
     </nav>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCCEXpCKsXOh_2S6xXCFJ0DOq7j22xLF-c",
+            authDomain: "harness-5823d.firebaseapp.com",
+            projectId: "harness-5823d",
+            storageBucket: "harness-5823d.appspot.com",
+            messagingSenderId: "406050936379",
+            appId: "1:406050936379:web:cc2d66766c23c8136eae1e",
+            measurementId: "G-0B7HSEVFT8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+
+    <script src="dashboard.js"></script>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
